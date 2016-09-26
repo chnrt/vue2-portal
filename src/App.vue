@@ -593,6 +593,6 @@
 </script>
 
 <style>
-  @import './assets/vendor.css';
-  @import './assets/index.css';
+  @import './assets/css/vendor.css';
+  @import './assets/css/index.css';
 </style>
