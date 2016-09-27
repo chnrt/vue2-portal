@@ -1,17 +1,48 @@
 <template>
   <div class="main-content">
-    <img-slider></img-slider>
-    <text-slider></text-slider>
+    <template v-for="item in results">
+      <layout-box 
+        :colWidthClass = "item.layout.colWidthClass"
+        :colHeightPctClass = "item.layout.colHeightPctClass"
+        :colOffsetLeftClass = "item.layout.colOffsetLeftClass"
+        :colOffsetRightClass = "item.layout.colOffsetRightClass"
+        :colMTClass = "item.layout.colMTClass"
+        :colMRClass = "item.layout.colMRClass"
+        :colMBClass = "item.layout.colMBClass"
+        :colMLClass = "item.layout.colMLClass">
 
-    <bg-divider></bg-divider>
+        <img-slider v-if="item.component.type=='slider'"></img-slider>
 
-    <text-box content="常用应用"></text-box>
-    <app-box
-      v-for="(item, index) in appBoxs"
-      :title="item.title">
-    </app-box>
+        <text-slider v-if="item.component.type=='text-slider'"></text-slider>
 
-    <bg-divider></bg-divider>
+        <bg-divider v-if="item.component.type=='divider'"></bg-divider>
+
+        <text-box 
+          v-if="item.component.type=='textbox'" 
+          :content="item.component.data.text">
+        </text-box>
+
+        <app-box 
+          v-if="item.component.type=='appbox'"
+          :iconsrc="getImg(item.component.data.iconsrc)"
+          :href="item.component.data.url"
+          :title="item.component.data.name">
+        </app-box>
+      </layout-box>
+    </template>
+
+<!--     <img-slider></img-slider>
+<text-slider></text-slider>
+
+<bg-divider></bg-divider>
+
+<text-box content="常用应用"></text-box>
+<app-box
+  v-for="(item, index) in appBoxs"
+  :title="item.title">
+</app-box>
+
+<bg-divider></bg-divider> -->
 
     <foot-bar></foot-bar>
     <div class="footbar-space"></div>
@@ -19,6 +50,8 @@
 </template>
 
 <script>
+  import results from './mock';
+  import LayoutBox from 'components/LayoutBox';
   import ImgSlider from 'components/ImgSlider';
   import TextSlider from 'components/TextSlider';
   import BgDivider from 'components/BgDivider';
@@ -31,29 +64,24 @@
 
     data() {
       return {
-        appBoxs: [{
-          title: '成绩发布',
-        }, {
-          title: '教学计划',
-        }, {
-          title: '圈子',
-        }, {
-          title: '通知公告',
-        }, {
-          title: '问卷调查',
-        }, {
-          title: '选课',
-        }],
+        results,
       };
     },
 
     components: {
+      LayoutBox,
       ImgSlider,
       TextSlider,
       BgDivider,
       TextBox,
       AppBox,
       FootBar,
+    },
+
+    methods: {
+      getImg(url) {
+        return require(url); // eslint-disable-line
+      },
     },
   };
 </script>
