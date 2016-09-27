@@ -1,166 +1,149 @@
 <style>
 .slider-container {
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
- .slider-container {
-    height: 400px;
-    margin: 20px auto;
-    width: 70%;
-    }
 .slider-center-center{
-		margin: auto;
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  margin: auto;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .slider-wrapper {
-    box-sizing: content-box;
-    display: flex;
-    height: 100%;
-    position: relative;
-    transition-property: transform;
-    width: 100%;
-    z-index: 1;
+  box-sizing: content-box;
+  display: flex;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  width: 100%;
+  z-index: 1;
 }
 /*垂直*/
 .swiper-container-vertical > .slider-wrapper{
   flex-direction: column;
 }
 .slider-item {
-    flex-shrink: 0;
-    height: 100%;
-    position: relative;
-    width: 100%;
+  flex-shrink: 0;
+  height: 100%;
+  position: relative;
+  width: 100%;
 }
 .slider-item {
-    align-items: center;
-    background: #fff none repeat scroll 0 0;
-    display: flex;
-    font-size: 40px;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
+  align-items: center;
+  background: #fff none repeat scroll 0 0;
+  display: flex;
+  font-size: 40px;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
 }
 .slider-item {
-    background-position: center center!important;
-    background-size: cover!important;
+background-position: center center!important;
+background-size: cover!important;
 }
 .animation-ease {
-		-webkit-transition: -webkit-transform 350ms cubic-bezier(.165, .84, .44, 1);
-		transition: transform 350ms cubic-bezier(.165, .84, .44, 1);
+-webkit-transition: -webkit-transform 350ms cubic-bezier(.165, .84, .44, 1);
+transition: transform 350ms cubic-bezier(.165, .84, .44, 1);
 }
 .slider-pagination {
-    position: absolute;
-    text-align: center;
-    transform: translate3d(0px, 0px, 0px);
-    /*transition: all 350ms ease 0s;*/
-    z-index: 10;
+position: absolute;
+text-align: center;
+transform: translate3d(0px, 0px, 0px);
+/*transition: all 350ms ease 0s;*/
+z-index: 10;
 }
 .slider-pagination-bullets{
-    bottom: 10px;
-    left: 0;
-    width: 100%;
+bottom: 10px;
+left: 0;
+width: 100%;
 }
 .slider-pagination-bullet{
-    background: #000 none repeat scroll 0 0;
-    border-radius: 100%;
-    display: inline-block;
-    height: 8px;
-    opacity: 0.2;
-    width: 8px;
-    cursor: pointer;
-    margin: 0 5px;
+background: #000 none repeat scroll 0 0;
+border-radius: 100%;
+display: inline-block;
+height: 8px;
+opacity: 0.2;
+width: 8px;
+cursor: pointer;
+margin: 0 5px;
 }
 /*垂直*/
 .swiper-container-vertical > .slider-pagination-bullets {
-    bottom: auto;
-    left: auto;
-    width: auto;
-    right: 10px;
-    top: 50%;
-    transform: translate3d(0px, -50%, 0px);
+  bottom: auto;
+  left: auto;
+  width: auto;
+  right: 10px;
+  top: 50%;
+  transform: translate3d(0px, -50%, 0px);
 }
 .swiper-container-vertical .slider-pagination-bullet{
-    display: block;
-    margin: 5px 0;
+  display: block;
+  margin: 5px 0;
 }
 .slider-pagination-bullet-active {
-    background: #fff none repeat scroll 0 0;
-    opacity: 1;
+  background: #fff none repeat scroll 0 0;
+  opacity: 1;
 }
 .slider-button-next, .slider-button-prev {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 27px 44px;
-    cursor: pointer;
-    height: 44px;
-    margin-top: -22px;
-    position: absolute;
-    top: 50%;
-    width: 27px;
-    z-index: 10;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 27px 44px;
+  cursor: pointer;
+  height: 44px;
+  margin-top: -22px;
+  position: absolute;
+  top: 50%;
+  width: 27px;
+  z-index: 10;
 }
 .slider-button-prev{
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D\'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg\'%20viewBox%3D\'0%200%2027%2044\'%3E%3Cpath%20d%3D\'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z\'%20fill%3D\'%23ffffff\'%2F%3E%3C%2Fsvg%3E");
-    left: 10px;
-    right: auto;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D\'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg\'%20viewBox%3D\'0%200%2027%2044\'%3E%3Cpath%20d%3D\'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z\'%20fill%3D\'%23ffffff\'%2F%3E%3C%2Fsvg%3E");
+  left: 10px;
+  right: auto;
 }
 .slider-button-next{
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D\'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg\'%20viewBox%3D\'0%200%2027%2044\'%3E%3Cpath%20d%3D\'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z\'%20fill%3D\'%23ffffff\'%2F%3E%3C%2Fsvg%3E");
-    left: auto;
-    right: 10px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D\'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg\'%20viewBox%3D\'0%200%2027%2044\'%3E%3Cpath%20d%3D\'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z\'%20fill%3D\'%23ffffff\'%2F%3E%3C%2Fsvg%3E");
+  left: auto;
+  right: 10px;
 }
-/*移动端优化*/
- @media screen and (max-width:414px) {
-    .slider-container {
-    height: 200px;
-    margin: 20px auto;
-    width: 90%;
-    }
+.slider-container {
+  height: 120px;
 }
 </style>
 <template>
-    <div class='slider-container' :class = 'basicdata.containerClass'>
-      <div class="slider-wrapper"
-      :style="styleobj"
-      :class="basicdata.animation"
-	    @touchmove="swipeMove"
-   	  @touchstart="swipeStart"
-      @touchend="swipeEnd"
-      @mousedown="swipeStart"
-      @mouseup="swipeEnd"
-      @mousemove="swipeMove"
-      >
-      <!-- 正常滚动 -->
-       <template  v-if="!sliderinit.loop">
-        <template  v-for="item in pages">
-      	 <div class="slider-item" :style="item.style">
-        	{{item.title}}
-       	  </div>
-        </template>
-       </template>
-      <!-- 无缝滚动 -->
-       <template  v-if="sliderinit.loop">
-        <div class="slider-item" :style="pages[pages.length-1].style">{{pages[pages.length-1].title}}</div>
-         <template  v-for="item in pages">
-          <div class="slider-item" :style="item.style">{{item.title}}</div>
-         </template>
-        <div class="slider-item" :style="pages[0].style">{{pages[0].title}}</div>
-       </template>
-      </div>
-      <div class="slider-pagination slider-pagination-bullets">
-         <template v-for="item in pagenums">
-           <span @click='slide($index)' class="slider-pagination-bullet" :class="$index == sliderinit.currentPage ? 'slider-pagination-bullet-active':''"></span>
-        </template>
-      </div>
-    </div>
-  </template>
+<div class="slider-container" :class="basicdata.containerClass">
+  <div class="slider-wrapper"
+    :style="styleobj"
+    :class="basicdata.animation"
+    @touchmove="swipeMove"
+    @touchstart="swipeStart"
+    @touchend="swipeEnd"
+    @mousedown="swipeStart"
+    @mouseup="swipeEnd"
+    @mousemove="swipeMove">
+    <!-- 正常滚动 -->  
+    <template  v-if="!sliderinit.loop">
+      <template  v-for="item in pages">
+        <div class="slider-item" :style="item.style">{{item.title}}</div>
+      </template>
+    </template>
+    <!-- 无缝滚动 -->  
+    <template  v-if="sliderinit.loop">
+      <div class="slider-item" :style="pages[pages.length-1].style">{{pages[pages.length-1].title}}</div>
+      <template  v-for="item in pages">
+        <div class="slider-item" :style="item.style">{{item.title}}</div>
+      </template>
+      <div class="slider-item" :style="pages[0].style">{{pages[0].title}}</div>
+    </template>
+  </div>
+</div>
+</template>
+
 <script>
 /* eslint-disable */
 export default {
@@ -211,8 +194,7 @@ export default {
          // 遍历子集
         let $sliderChildren  = $slider.children;
         for(let item in $sliderChildren){
-          if(item
-    <= lastPage){
+          if(item <= lastPage){
             // 找到实际宽度clientWidth+外边距
             poswidth += $sliderChildren[item].offsetWidth;
             poswidth += parseInt($sliderChildren[item].style.marginRight.length?$sliderChildren[item].style.marginRight:0);
@@ -253,28 +235,25 @@ export default {
     }
   },
   ready () {
-  let that = this;
-  //起始跳到指定页 更新为无样式的了,更符合常理
-  that.slide(this.sliderinit.currentPage,'animationnone')
-  //定制事件
-  that.$on('slideTo', (num) =>
-  {
-      this.slide(num);
-  });
-  that.$on('slideNext', () => {
-      this.next();
-  });
-  that.$on('slidePre', () => {
-      this.pre();
-  });
-  // 第一次的滚动也要向上传递一次事件
-  that.$dispatch('slide',this.sliderinit.currentPage);
-  //自动轮播 支持无缝滚动
-  that.clock().begin(that);
-  // 设定垂直轮播class
-  if(this.sliderinit.direction == 'vertical'){
-    this.basicdata.containerClass['swiper-container-vertical'] = true;
-  }
+    let that = this;
+    //起始跳到指定页 更新为无样式的了,更符合常理
+    that.slide(this.sliderinit.currentPage,'animationnone')
+    //定制事件
+    that.$on('slideTo', (num) => {
+        this.slide(num);
+    });
+    that.$on('slideNext', () => {
+        this.next();
+    });
+    that.$on('slidePre', () => {
+        this.pre();
+    });
+    //自动轮播 支持无缝滚动
+    that.clock().begin(that);
+    // 设定垂直轮播class
+    if(this.sliderinit.direction == 'vertical'){
+      this.basicdata.containerClass['swiper-container-vertical'] = true;
+    }
   },
   methods:{
   swipeStart (e) {
@@ -337,7 +316,7 @@ export default {
           let that = this;
           setTimeout(function(){
           that.clock().begin(that);
-          },350);
+          }, 2000);
         }
         /* work out what the movement was */
         if (deltaTime > this.sliderinit.thresholdTime) {
@@ -430,8 +409,6 @@ export default {
         // 不传递广播事件
         return
       }
-      // 广播事件
-      this.$dispatch('slide',this.sliderinit.currentPage)
     },
     clock:function(){
       // 暂时这么写，写了自调用，但是vue不支持，欢迎小伙伴提供新的思路
@@ -449,7 +426,7 @@ export default {
         stop:function(that){
           clearInterval(that.setIntervalid)
         },
-        }
+      }
     },
   }
 }
