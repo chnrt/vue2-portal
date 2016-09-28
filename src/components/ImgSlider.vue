@@ -1,15 +1,12 @@
 <template>
 <slider @pre="pre" @next="next">
-
-    <!-- slot  -->
-    <template v-for="(item, index) in pageList">
-      <div
-        class="slider-item" 
-        :style="pageList[index].style">
-        <h1>{{ item.title }}</h1>
-      </div>
-    </template>
-
+  <template v-for="(item, index) in pageList">
+    <div
+      class="slider-item"
+      :style="pageList[index].style">
+      <h1>{{ item.title }}</h1>
+    </div>
+  </template>
 </slider>
 </template>
 
@@ -41,8 +38,8 @@ export default {
       return this.someList.map((value, index) => {
         const pageInx = index - this.currentPage;
 
-// TODO: 无限滚动
-/*        if ((this.currentPage === 0 && index === this.someList.length - 1) ||
+        // TODO: 无限滚动
+        /* if ((this.currentPage === 0 && index === this.someList.length - 1) ||
           (index === this.currentPage - 1)) {
           pageInx = -1;
         } else if (index === this.currentPage) {

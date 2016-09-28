@@ -14,9 +14,9 @@
 export default {
   data() {
     return {
-      tracking: true,
       start: {},
       end: {},
+      tracking: true,
       thresholdTime: 500,
       thresholdDistance: 100,
     };
