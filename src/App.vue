@@ -27,6 +27,7 @@
         :href="item.component.data.url"
         :title="item.component.data.name">
       </app-box>
+
     </layout-box>
   </template>
 

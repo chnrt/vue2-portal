@@ -27,15 +27,19 @@ export default {
       },
 
       loop: null,
+
+      pageList: [],
     };
   },
 
-  computed: {
-    pageList() {
-      return this.imgList.map((value, index) => {
-        let pageInx = index - this.currentPage;
+  methods: {
+    changePage(direction) {
+      let zIndex = 1;
 
-        // TODO: 无限滚动闪烁BUG
+      this.pageList = this.imgList.map((value, index) => {
+        let pageInx;
+
+        // 这么做是为了循环滚动
         if ((this.currentPage === 0 && index === this.imgList.length - 1) ||
           (index === this.currentPage - 1)) {
           pageInx = -1;
@@ -46,17 +50,28 @@ export default {
           pageInx = 1;
         } else {
           pageInx = 2;
+
+          // 解决滚动过程中第一页滚动时闪烁问题
+          if ((direction === 'next' &&
+              this.currentPage === 1 &&
+              index === this.imgList.length - 1) ||
+            (direction === 'pre' &&
+              this.currentPage === 0 &&
+              index === 2)) {
+            zIndex = 0;
+          }
         }
 
         const newVl = value;
-        newVl.style = { transform: `translateX(${pageInx * 100}%)` };
+        newVl.style = {
+          transform: `translateX(${pageInx * 100}%)`,
+          'z-index': zIndex,
+        };
 
         return newVl;
       });
     },
-  },
 
-  methods: {
     pre() {
       if (this.currentPage > 0) {
         this.currentPage --;
@@ -64,6 +79,7 @@ export default {
         this.currentPage = this.pageList.length - 1;
       }
 
+      this.changePage('pre');
       this.initLoop();
     },
 
@@ -74,6 +90,7 @@ export default {
         this.currentPage = 0;
       }
 
+      this.changePage('next');
       this.initLoop();
     },
 
@@ -93,9 +110,8 @@ export default {
   },
 
   mounted() {
-    this.$nextTick(() => {
-      this.initLoop();
-    });
+    this.changePage('next');
+    this.initLoop();
   },
 };
 </script>

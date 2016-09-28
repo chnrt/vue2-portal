@@ -104,6 +104,5 @@ export default {
   -webkit-transition: 0.4s ease-in-out transform, opacity;
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  background-color: #ff00ff;
 }
 </style>
