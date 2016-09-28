@@ -21,10 +21,22 @@ export default [{
       "borderLeftClass": ""
     },
     "data": [{
-      "src": "./assets/images/s1.jpg",
+      "src": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=938096994,3074232342&fm=116&gp=0.jpg",
       "url": "#"
     }, {
-      "src": "./assets/images/s2.jpg",
+      "src": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2395910632,2735784472&fm=116&gp=0.jpg",
+      "url": "#"
+    }, {
+      "src": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=938096994,3074232342&fm=116&gp=0.jpg",
+      "url": "#"
+    }, {
+      "src": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2395910632,2735784472&fm=116&gp=0.jpg",
+      "url": "#"
+    }, {
+      "src": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=938096994,3074232342&fm=116&gp=0.jpg",
+      "url": "#"
+    }, {
+      "src": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2395910632,2735784472&fm=116&gp=0.jpg",
       "url": "#"
     }]
   }
@@ -124,8 +136,8 @@ export default [{
   }
 }, {
   "layout": {
-    "colWidthClass": "col-1of4",
-    "colHeightPctClass": "col-hp-1of1",
+    colWidthClass: 'col-1of2',
+    colHeightPctClass: 'col-hp-1of2',
     "colOffsetLeftClass": "",
     "colOffsetRightClass": "",
     "colMTClass": "",
@@ -154,8 +166,8 @@ export default [{
   }
 }, {
   "layout": {
-    "colWidthClass": "col-1of4",
-    "colHeightPctClass": "col-hp-1of1",
+    colWidthClass: 'col-1of4',
+    colHeightPctClass: 'col-hp-1of1',
     "colOffsetLeftClass": "",
     "colOffsetRightClass": "",
     "colMTClass": "",
@@ -184,8 +196,8 @@ export default [{
   }
 }, {
   "layout": {
-    "colWidthClass": "col-1of4",
-    "colHeightPctClass": "col-hp-1of1",
+    colWidthClass: 'col-1of4',
+    colHeightPctClass: 'col-hp-1of1',
     "colOffsetLeftClass": "",
     "colOffsetRightClass": "",
     "colMTClass": "",
@@ -214,8 +226,8 @@ export default [{
   }
 }, {
   "layout": {
-    "colWidthClass": "col-1of4",
-    "colHeightPctClass": "col-hp-1of1",
+    colWidthClass: 'col-1of3',
+    colHeightPctClass: 'col-hp-1of1',
     "colOffsetLeftClass": "",
     "colOffsetRightClass": "",
     "colMTClass": "",
@@ -240,6 +252,126 @@ export default [{
       "iconsrc": "./assets/images/问卷调查.png",
       "url": "#",
       "name": "问卷调查"
+    }
+  }
+}, {
+  "layout": {
+    colWidthClass: 'col-2of3',
+    colHeightPctClass: 'col-hp-1of2',
+    "colOffsetLeftClass": "",
+    "colOffsetRightClass": "",
+    "colMTClass": "",
+    "colMRClass": "",
+    "colMBClass": "",
+    "colMLClass": ""
+  },
+  "component": {
+    "type": "appbox",
+    "layout": {
+      "bgColorClass": "",
+      "borderColorClass": "border-gray-e3",
+      "borderTopClass": "",
+      "borderRightClass": "border-right-1",
+      "borderBottomClass": "border-bottom-1",
+      "borderLeftClass": "",
+      "hasNewClass": "",
+      "hasDotClass": "",
+      "borderRoundClass": ""
+    },
+    "data": {
+      "iconsrc": "./assets/images/选课.png",
+      "url": "#",
+      "name": "选课"
+    }
+  }
+}, {
+  "layout": {
+    colWidthClass: 'col-1of3',
+    colHeightPctClass: 'col-hp-2of3',
+    "colOffsetLeftClass": "",
+    "colOffsetRightClass": "",
+    "colMTClass": "",
+    "colMRClass": "",
+    "colMBClass": "",
+    "colMLClass": ""
+  },
+  "component": {
+    "type": "appbox",
+    "layout": {
+      "bgColorClass": "",
+      "borderColorClass": "border-gray-e3",
+      "borderTopClass": "",
+      "borderRightClass": "border-right-1",
+      "borderBottomClass": "border-bottom-1",
+      "borderLeftClass": "",
+      "hasNewClass": "",
+      "hasDotClass": "",
+      "borderRoundClass": ""
+    },
+    "data": {
+      "iconsrc": "./assets/images/移动办公_11.png",
+      "url": "#",
+      "name": "移动办公"
+    }
+  }
+}, {
+  "layout": {
+    colWidthClass: 'col-1of3',
+    colHeightPctClass: 'col-hp-2of3',
+    "colOffsetLeftClass": "",
+    "colOffsetRightClass": "",
+    "colMTClass": "",
+    "colMRClass": "",
+    "colMBClass": "",
+    "colMLClass": ""
+  },
+  "component": {
+    "type": "appbox",
+    "layout": {
+      "bgColorClass": "",
+      "borderColorClass": "border-gray-e3",
+      "borderTopClass": "",
+      "borderRightClass": "border-right-1",
+      "borderBottomClass": "border-bottom-1",
+      "borderLeftClass": "",
+      "hasNewClass": "",
+      "hasDotClass": "",
+      "borderRoundClass": ""
+    },
+    "data": {
+      "iconsrc": "./assets/images/营养食谱.png",
+      "url": "#",
+      "name": "营养食谱"
+    }
+  }
+}, {
+  "layout": {
+    colWidthClass: 'col-1of3',
+    colHeightPctClass: 'col-hp-2of3',
+    "colOffsetLeftClass": "",
+    "colOffsetRightClass": "",
+    "colMTClass": "",
+    "colMRClass": "",
+    "colMBClass": "",
+    "colMLClass": ""
+  },
+  "component": {
+    "type": "appbox",
+    "layout": {
+      "bgColorClass": "",
+      "borderColorClass": "border-gray-e3",
+      "borderTopClass": "",
+      "borderRightClass": "",
+      "borderBottomClass": "border-bottom-1",
+      "borderLeftClass": "",
+      "hasNewClass": "",
+      "hasDotClass": "",
+      "borderRoundClass": ""
+    },
+    "data": {
+      "iconsrc": "./assets/images/作业.png",
+      "url": "#",
+      "name": "作业"
     }
   }
 }, {
@@ -296,126 +428,6 @@ export default [{
       "bgsrc": "",
       "url": "",
       "text": "其他应用"
-    }
-  }
-}, {
-  "layout": {
-    "colWidthClass": "col-1of4",
-    "colHeightPctClass": "col-hp-1of1",
-    "colOffsetLeftClass": "",
-    "colOffsetRightClass": "",
-    "colMTClass": "",
-    "colMRClass": "",
-    "colMBClass": "",
-    "colMLClass": ""
-  },
-  "component": {
-    "type": "appbox",
-    "layout": {
-      "bgColorClass": "",
-      "borderColorClass": "border-gray-e3",
-      "borderTopClass": "",
-      "borderRightClass": "border-right-1",
-      "borderBottomClass": "border-bottom-1",
-      "borderLeftClass": "",
-      "hasNewClass": "",
-      "hasDotClass": "",
-      "borderRoundClass": ""
-    },
-    "data": {
-      "iconsrc": "./assets/images/选课.png",
-      "url": "#",
-      "name": "选课"
-    }
-  }
-}, {
-  "layout": {
-    "colWidthClass": "col-1of4",
-    "colHeightPctClass": "col-hp-1of1",
-    "colOffsetLeftClass": "",
-    "colOffsetRightClass": "",
-    "colMTClass": "",
-    "colMRClass": "",
-    "colMBClass": "",
-    "colMLClass": ""
-  },
-  "component": {
-    "type": "appbox",
-    "layout": {
-      "bgColorClass": "",
-      "borderColorClass": "border-gray-e3",
-      "borderTopClass": "",
-      "borderRightClass": "border-right-1",
-      "borderBottomClass": "border-bottom-1",
-      "borderLeftClass": "",
-      "hasNewClass": "",
-      "hasDotClass": "",
-      "borderRoundClass": ""
-    },
-    "data": {
-      "iconsrc": "./assets/images/移动办公_11.png",
-      "url": "#",
-      "name": "移动办公"
-    }
-  }
-}, {
-  "layout": {
-    "colWidthClass": "col-1of4",
-    "colHeightPctClass": "col-hp-1of1",
-    "colOffsetLeftClass": "",
-    "colOffsetRightClass": "",
-    "colMTClass": "",
-    "colMRClass": "",
-    "colMBClass": "",
-    "colMLClass": ""
-  },
-  "component": {
-    "type": "appbox",
-    "layout": {
-      "bgColorClass": "",
-      "borderColorClass": "border-gray-e3",
-      "borderTopClass": "",
-      "borderRightClass": "border-right-1",
-      "borderBottomClass": "border-bottom-1",
-      "borderLeftClass": "",
-      "hasNewClass": "",
-      "hasDotClass": "",
-      "borderRoundClass": ""
-    },
-    "data": {
-      "iconsrc": "./assets/images/营养食谱.png",
-      "url": "#",
-      "name": "营养食谱"
-    }
-  }
-}, {
-  "layout": {
-    "colWidthClass": "col-1of4",
-    "colHeightPctClass": "col-hp-1of1",
-    "colOffsetLeftClass": "",
-    "colOffsetRightClass": "",
-    "colMTClass": "",
-    "colMRClass": "",
-    "colMBClass": "",
-    "colMLClass": ""
-  },
-  "component": {
-    "type": "appbox",
-    "layout": {
-      "bgColorClass": "",
-      "borderColorClass": "border-gray-e3",
-      "borderTopClass": "",
-      "borderRightClass": "",
-      "borderBottomClass": "border-bottom-1",
-      "borderLeftClass": "",
-      "hasNewClass": "",
-      "hasDotClass": "",
-      "borderRoundClass": ""
-    },
-    "data": {
-      "iconsrc": "./assets/images/作业.png",
-      "url": "#",
-      "name": "作业"
     }
   }
 }, {

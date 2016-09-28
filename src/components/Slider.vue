@@ -1,5 +1,6 @@
 <template>
 <div class="slider"
+  :style="height"
   @touchmove="swipeMove"
   @touchstart="swipeStart"
   @touchend="swipeEnd"
@@ -12,6 +13,8 @@
 
 <script>
 export default {
+  props: ['height'],
+
   data() {
     return {
       start: {},
@@ -87,7 +90,6 @@ export default {
 <style>
 .slider {
   position: relative;
-  height: 120px;
   top: 0;
   left: 0;
   color: #fff;
@@ -102,5 +104,6 @@ export default {
   -webkit-transition: 0.4s ease-in-out transform, opacity;
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
+  background-color: #ff00ff;
 }
 </style>

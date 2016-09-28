@@ -1,10 +1,10 @@
 <template>
-<slider @pre="pre" @next="next">
+<slider @pre="pre" @next="next" :height="height">
   <template v-for="(item, index) in pageList">
     <div
       class="slider-item"
       :style="pageList[index].style">
-      <h1>{{ item.title }}</h1>
+      <img :src="item.src">
     </div>
   </template>
 </slider>
@@ -14,42 +14,39 @@
 import Slider from './Slider';
 
 export default {
+  props: {
+    imgList: Array,
+  },
+
   data() {
     return {
       currentPage: 0,
 
-      loop: null,
+      height: {
+        height: '120px',
+      },
 
-      someList: [{
-        title: '1',
-        img: 'testimg-1.png',
-      }, {
-        title: '2',
-        img: 'testimg-2.png',
-      }, {
-        title: '3',
-        img: 'testimg-3.png',
-      }],
+      loop: null,
     };
   },
 
   computed: {
     pageList() {
-      return this.someList.map((value, index) => {
-        const pageInx = index - this.currentPage;
+      return this.imgList.map((value, index) => {
+        let pageInx = index - this.currentPage;
 
-        // TODO: 无限滚动
-        /* if ((this.currentPage === 0 && index === this.someList.length - 1) ||
+        // TODO: 无限滚动闪烁BUG
+        if ((this.currentPage === 0 && index === this.imgList.length - 1) ||
           (index === this.currentPage - 1)) {
           pageInx = -1;
         } else if (index === this.currentPage) {
           pageInx = 0;
-        } else if ((this.currentPage === this.someList.length - 1 && index === 0) ||
+        } else if ((this.currentPage === this.imgList.length - 1 && index === 0) ||
           (index === this.currentPage + 1)) {
           pageInx = 1;
         } else {
           pageInx = 2;
-        }*/
+        }
 
         const newVl = value;
         newVl.style = { transform: `translateX(${pageInx * 100}%)` };
@@ -103,9 +100,11 @@ export default {
 };
 </script>
 
-<style scope>
-h1 {
-  margin: 0;
-  font-size: 48px;
+<style scoped>
+.slider-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 </style>

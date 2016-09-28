@@ -1,19 +1,18 @@
 <template>
 <div class="main-content">
   <template v-for="item in results">
-    <layout-box
-      :colWidthClass = "item.layout.colWidthClass"
-      :colHeightPctClass = "item.layout.colHeightPctClass"
-      :colOffsetLeftClass = "item.layout.colOffsetLeftClass"
-      :colOffsetRightClass = "item.layout.colOffsetRightClass"
-      :colMTClass = "item.layout.colMTClass"
-      :colMRClass = "item.layout.colMRClass"
-      :colMBClass = "item.layout.colMBClass"
-      :colMLClass = "item.layout.colMLClass">
+    <layout-box :layout="item.layout">
 
-      <img-slider v-if="item.component.type=='slider'"></img-slider>
+      <img-slider
+        v-if="item.component.type=='slider'"
+        :imgList="item.component.data">
+      </img-slider>
 
-      <text-slider v-if="item.component.type=='text-slider'"></text-slider>
+      <text-slider
+        v-if="item.component.type=='text-slider'"
+        :layout="item.component.layout"
+        :ntdata="item.component.data">
+      </text-slider>
 
       <bg-divider v-if="item.component.type=='divider'"></bg-divider>
 
