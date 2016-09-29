@@ -24,7 +24,7 @@
       <app-box
         v-if="item.component.type=='appbox'"
         :iconsrc="getImg(item.component.data.iconsrc)"
-        :href="item.component.data.url"
+        :url="item.component.data.url"
         :title="item.component.data.name">
       </app-box>
 
