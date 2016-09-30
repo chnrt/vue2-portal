@@ -23,7 +23,7 @@
 
       <app-box
         v-if="item.component.type=='appbox'"
-        :iconsrc="getImg(item.component.data.iconsrc)"
+        :iconsrc="item.component.data.iconsrc"
         :url="item.component.data.url"
         :title="item.component.data.name">
       </app-box>
@@ -31,7 +31,7 @@
     </layout-box>
   </template>
 
-  <foot-bar></foot-bar>
+  <foot-bar :footers="footers"></foot-bar>
   <div class="footbar-space"></div>
 </div>
 </template>
@@ -46,12 +46,23 @@ import TextBox from 'components/TextBox';
 import AppBox from 'components/AppBox';
 import FootBar from 'components/FootBar';
 
+function getQueryString(name) {
+  const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`, 'i');
+  const r = window.location.search.substr(1).match(reg);
+  if (r != null) return unescape(r[2]);
+  return null;
+}
+
+const corpId = getQueryString('corpId') || 'wxdc8bcb7e3fcd7028';
+
 export default {
   name: 'app',
 
   data() {
     return {
-      results,
+      results: results[corpId].content,
+
+      footers: results[corpId].footers,
     };
   },
 
@@ -63,10 +74,6 @@ export default {
     TextBox,
     AppBox,
     FootBar,
-  },
-
-  methods: {
-    getImg: url => require(url), // eslint-disable-line
   },
 };
 </script>

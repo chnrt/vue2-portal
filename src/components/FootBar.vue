@@ -1,36 +1,18 @@
 <template>
   <div class="footbar">
     <div class="footbar-content">
-      <div class="col-1of4">
-        <div class="footbar-btn touch-active sel">
-          <div class="footbar-btn-icon"> <i class="iconfont icon-apphome"></i>
+
+      <template v-for="item in footers">
+        <a class="col-1of5" :href="item.url">
+          <div class="footbar-btn touch-active" :class="item.sel">
+            <div class="footbar-btn-icon">
+              <i class="iconfont" :class="[item.icon]"></i>
+            </div>
+            <div class="footbar-btn-text">{{ item.name }}</div>
           </div>
-          <div class="footbar-btn-text">首页</div>
-        </div>
-      </div>
-      <div class="col-1of4">
-        <div class="footbar-btn touch-active">
-          <div class="footbar-btn-icon"> <i class="iconfont icon-fxx"></i>
-          </div>
-          <div class="footbar-btn-text">发消息</div>
-        </div>
-      </div>
-      <div class="col-1of4">
-        <div class="footbar-btn touch-active">
-          <div class="footbar-btn-icon">
-            <i class="iconfont icon-tzgg"></i>
-          </div>
-          <div class="footbar-btn-text">消息</div>
-        </div>
-      </div>
-      <div class="col-1of4">
-        <div class="footbar-btn touch-active">
-          <div class="footbar-btn-icon">
-            <i class="iconfont icon-wode"></i>
-          </div>
-          <div class="footbar-btn-text">我的</div>
-        </div>
-      </div>
+        </a>
+      </template>
+
     </div>
   </div>
 
@@ -39,5 +21,7 @@
 <script>
   export default {
     name: 'foot-bar',
+
+    props: ['footers'],
   };
 </script>
